@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.div{
+    display: flex;
+}
+.sidebar{
+    background: rgb(145, 122, 122);
+    width: 22%;
+    min-height:735px;
+}
+.buttons form{
+    display: flex;
+    justify-content: center;
+}
+.buttons{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 30px 0;
+}
+.buttons button{
+    width: 60%;
+    margin: 0 auto;
+    padding: 7px 0;
+    border-radius: 5px;
+    border:none;
+}
+section p {
+    margin: 0;
+}
+section input{
+    width: 100%;
+    height: 30px;
+}
+
+
+</style>
+<body>
+   <div class="div">
+    <div class="sidebar">
+    <div style="display: flex; align-items: center; justify-content: center;gap: 0 10px;">
+        <img style="width: 60px; height: 40px; border-radius: 50%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaDGuMSGROb9tTNzjwJO2k963svuEa-zBfAbSXxP9-clT2nNUpI8Z9z-KwKdck3i4lh6k&usqp=CAU" alt="">
+        <h1 >Admin</h1>
+    </div>
+    <div class="buttons">
+        <form method="get" action="/admin/get/ejs">
+            <button type="submit">Get Products</button>
+        </form>
+        <form method="get" action="/admin/post/ejs">
+            <button type="submit">Post Products</button>
+        </form>
+        <form action="">
+            <button disabled>Update Products</button>
+        </form>
+        <form method="get" action="/admin/delete/ejs">
+            <button>Delete Products</button>
+        </form>
+        <form method="get" action="/admin/epizodpost/ejs">
+            <button type="submit" style="background: orangered; color: white;">Post Epizodes</button>
+        </form>
+        <form method="get" action="/admin/epizoddelete/ejs">
+            <button type="submit">Delete Epizodes</button>
+        </form>
+        <form method="get" action="/admin/topicspost/ejs">
+            <button type="submit">Post Topics</button>
+        </form>
+        <form method="get" action="/admin/topicsdelete/ejs">
+            <button type="submit">Delete Topics</button>
+        </form>
+        <form method="get" action="/admin/users/ejs">
+            <button>Users</button>
+        </form>
+       <form method="get" action="/admin/subscribe/ejs">
+        <button>Subscribes</button>
+       </form>
+    </div>
+    </div>
+    <section>
+        <div >
+            <form style="border-radius: 10px;width:300px ;padding:10px 20px 20px ; background:gray;display:grid; grid-template-columns: repeat(1,1fr); margin:100px 400px;gap: 10px 0;" method="post" action="/admin/epizod/post" enctype="multipart/form-data">
+                <p>name</p>
+                <input type="text" required placeholder="name" name="name">
+                <p>image</p>
+                <input type="file" placeholder="image" name="image">
+                <p>author</p>
+                <input  type="text" required placeholder="author" name="author">
+                <p>description</p>
+                <input type="text" required placeholder="description" name="desc">
+                <p>authorimage</p>
+                <input type="file" required placeholder="authorimage" name="authorimage">
+                <button style="width: 60%; margin: 0 auto;height: 30px; background:white; border-radius: 5px; border: none;" type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+   </div>
+</body>
+</html>
